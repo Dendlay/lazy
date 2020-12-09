@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit accusantium neque debitis facilis, ex laudantium, illum voluptatibus dolores quo similique possimus, ipsam molestiae perspiciatis dicta aliquid ut consectetur? Est recusandae id ullam ipsam placeat animi, temporibus possimus officiis. Est sed officia optio maiores error aut placeat saepe aliquid impedit atque commodi possimus, cumque inventore culpa facilis suscipit quia exercitationem enim molestias recusandae consequatur necessitatibus. Dolorem, nemo voluptatem tenetur facere atque iste obcaecati quod deserunt provident alias, fugit totam voluptatum nesciunt suscipit esse pariatur repellendus rem sunt amet necessitatibus. Placeat necessitatibus doloremque modi recusandae soluta hic est, tenetur delectus at animi?</p>
+        <img src="12.jpg" data-src="1.jpg" class='blur'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsam incidunt voluptatum, libero dolores id modi placeat doloremque minima aspernatur nisi qui velit consequuntur enim est facilis provident beatae voluptate adipisci similique aut voluptates ea fugit. Atque aperiam, deserunt provident iusto illum rerum repellat molestiae autem amet impedit architecto, ea ex sunt. Labore vitae repellendus voluptate neque, fugiat hic consectetur eius quae natus aut beatae assumenda itaque voluptas nam corrupti quibusdam expedita quisquam harum maiores nihil eaque vel aliquid, quas perferendis! Itaque doloremque illo iure id soluta consequatur aperiam beatae eveniet iusto eaque? Voluptas, natus. Aspernatur molestias facilis saepe sit?</p>
+        <img src="32.jpg" data-src="3.jpg" class='blur'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos saepe explicabo voluptates officiis velit, voluptatem et quidem cumque ipsa tempore rerum quae sed temporibus ab totam debitis corporis dolor alias?</p>
+        <img src="42.jpg" data-src="4.jpg" class='blur'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente suscipit modi quos consequuntur, dolores id incidunt, aliquid, ullam quibusdam iure vel doloremque reprehenderit corporis totam! Necessitatibus, cum culpa? Provident, id dolores perferendis mollitia blanditiis amet maxime eos, quas ducimus error omnis rem hic nulla illo ipsum cumque magnam tenetur, unde velit qui. Eius repudiandae, autem quas, cupiditate ducimus perferendis expedita earum facere architecto totam praesentium eum explicabo temporibus in maiores qui nemo, officia impedit rem. Facere quas dolorem blanditiis nemo iure nostrum, officia aut praesentium, ratione delectus ipsam placeat assumenda. Qui quibusdam, fugiat facilis ex laborum aspernatur aliquam reiciendis fuga!
+        <img src="52.jpg" data-src="5.jpg" class='blur'>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam mollitia, natus quasi commodi vitae temporibus obcaecati odio, quos aliquam esse sint? Iusto, dolore rerum consequuntur atque error accusantium culpa cum exercitationem labore eos itaque? Fugit magni autem fugiat exercitationem sunt rerum earum impedit explicabo in repellat animi ipsam tempora minima, enim cupiditate? Aliquam molestias corporis, beatae error aut deleniti aspernatur doloribus voluptatum minus tenetur natus maiores animi possimus fugiat facere nemo harum adipisci repellendus exercitationem amet est ad? Delectus debitis eum quam alias, aliquam pariatur eos vero odit deserunt unde, atque excepturi veniam cum tempora praesentium ipsam officia animi ea!</p>
+        </p>
+        <img src="62.jpg" data-src="6.jpg" class='blur'>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, consectetur eos nobis ex fugiat maxime autem, assumenda fugit modi hic iure tenetur itaque delectus doloribus laboriosam corrupti, repudiandae odio architecto. Ex esse quod laboriosam non exercitationem quo illo nam blanditiis perferendis alias molestias necessitatibus quasi, accusantium suscipit reprehenderit sint laborum eaque cumque! Reprehenderit magnam impedit voluptate reiciendis. Vel voluptates illo corporis blanditiis cumque odio esse quidem quisquam ducimus illum, ad nihil mollitia at fugiat harum eaque molestiae fuga facere reiciendis tempore aliquam ullam ipsum commodi. Laborum repellendus rerum quibusdam perspiciatis, laudantium accusantium modi, nihil minima fugiat mollitia deleniti voluptate adipisci.</p>
+        <img src="72.jpg" data-src="7.jpg" class='blur'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quae harum fugit quibusdam dolore, ullam maiores iure corporis impedit deleniti doloribus asperiores eaque repellendus, officiis ipsa assumenda possimus praesentium similique eum. Tempore ut aliquam quod nostrum corporis nesciunt quaerat laboriosam dignissimos cumque, doloribus deserunt eum quae quos consequatur fugiat ex esse id magnam dicta culpa itaque! Vero numquam dolores quis odit molestias, dolor eos ratione voluptas aperiam quaerat minima modi, alias aliquid sed totam repellendus doloribus et fugiat eveniet? Facere expedita excepturi laborum dicta in sapiente aliquam veniam beatae quis, dolorem, ratione quam. Quidem, iusto omnis illo eum eligendi iste!</p>
+    </div>
+    
+    <script>
+    const visible = function(element) {
+        return element.getBoundingClientRect().top < (window.innerHeight - 150)
+    }
+    const LazyLoad = function() {
+        let imgs = document.querySelectorAll('img.blur')
+        for (let i = 0; i < imgs.length; i++){
+           if (visible(imgs[i])){
+               let path = imgs[i].getAttribute('data-src');
+               imgs[i].setAttribute('src', path)
+           }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('scroll', LazyLoad);
+    })
+
+
+    </script>
+
+</body>
+</html>

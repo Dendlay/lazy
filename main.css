@@ -1,0 +1,10 @@
+#box {
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
